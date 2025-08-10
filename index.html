@@ -195,14 +195,17 @@
                 $('#resKategoriRow').removeClass('d-none');
                 $('#resVerifikasiRow').removeClass('d-none');
                 
-                const verifikasi = result["Hasil Verifikasi"];
-                if (verifikasi.includes("Memenuhi Syarat")) {
+               const verifikasi = result["Hasil Verifikasi"];
+                if (verifikasi.startsWith("Memenuhi")) {
                     $('#resVerifikasi').html('<span class="fs-4 text-success">' + verifikasi + '</span>');
                     $('#resAlasanRow').addClass('d-none');
-                } else {
+                } else if (verifikasi.startsWith("Tidak Memenuhi")) {
                     $('#resVerifikasi').html('<span class="fs-4 text-danger">' + verifikasi + '</span>');
                     $('#resAlasan').text(result["Alasan"]);
                     $('#resAlasanRow').removeClass('d-none');
+                } else {
+                    $('#resVerifikasi').html('<span class="fs-4">' + verifikasi + '</span>');
+                    $('#resAlasanRow').addClass('d-none');
                 }
             }
             
@@ -250,13 +253,16 @@
                 $('#resVerifikasiRow').removeClass('d-none');
                 
                 const verifikasi = result["Hasil Verifikasi"];
-                if (verifikasi.includes("Memenuhi Syarat")) {
+                if (verifikasi.startsWith("Memenuhi")) {
                     $('#resVerifikasi').html('<span class="fs-4 text-success">' + verifikasi + '</span>');
                     $('#resAlasanRow').addClass('d-none');
-                } else {
+                } else if (verifikasi.startsWith("Tidak Memenuhi")) {
                     $('#resVerifikasi').html('<span class="fs-4 text-danger">' + verifikasi + '</span>');
                     $('#resAlasan').text(result["Alasan"]);
                     $('#resAlasanRow').removeClass('d-none');
+                } else {
+                    $('#resVerifikasi').html('<span class="fs-4">' + verifikasi + '</span>');
+                    $('#resAlasanRow').addClass('d-none');
                 }
             }
             
