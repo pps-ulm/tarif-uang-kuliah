@@ -255,7 +255,7 @@
                         showResult(response, noReg, true);
                     },
                     error: function(xhr, status, error) {
-                        showResult({ error: 'Data anda tidak ada dalam data pengajuan yang kami terima' + error }, noReg, true);
+                        showResult({ error: 'No Peserta yang anda masukkan keliru/Data anda tidak ada dalam data pengajuan yang kami terima secara online' + error }, noReg, true);
                     }
                 });
             }, 1000);
@@ -291,7 +291,7 @@
                         showResult(response, nim, false);
                     },
                     error: function(xhr, status, error) {
-                        showResult({ error: 'Gagal menghubungi server: ' + error }, nim, false);
+                        showResult({ error: 'NIM yang anda masukkan keliru/Data anda tidak ada dalam data kami' + error }, nim, false);
                     }
                 });
             }, 1000);
